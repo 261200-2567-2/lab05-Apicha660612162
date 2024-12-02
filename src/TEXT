@@ -1,0 +1,26 @@
+From lab04
+Character have Shockbom and MaxHammer
+-interface character
+-void levelup() => level
+-void shopping() => shop and sell something
+-void equipment(Hammer)=>use Hammer
+-void powerdrink() => item uppower
+
+interface MaxHammer extend charactor
+-void block() => defend by hammer
+-void Attrack(target) => hit by hammer
+-void spin()=> attrack aroud
+
+interface shockbom extend character
+-void changebullet => change mag
+-void shot(target) => hit
+-void shockBom() =>bulletBom
+
+weapon have Hammer and Gun
+
+interface Hammer
+-void upgrad()
+interface Hammer extend weapon  //for MaxHammer
+-void buffAttack => up power attrack
+interface Gun extend weapon // for Shockbom
+-void powerhit() => hit morepower
