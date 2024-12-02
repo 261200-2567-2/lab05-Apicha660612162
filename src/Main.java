@@ -1,17 +1,48 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
+// Implement the MaxHammer character
+
+
+
+// Main class to demonstrate interactions
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Choose your character:");
+        System.out.println("1. Warrior (MaxHammer)");
+        System.out.println("2. Gunner (ShockBom)");
+        System.out.print("Enter 1 or 2: ");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        int choice = scanner.nextInt();
+        Character character;
+
+        if (choice == 1) {
+            character = new Warrior();
+            Hammer hammer = new BasicHammer();
+            System.out.println("\n== Warrior Actions ==");
+            character.levelUp();
+            character.shopping();
+            character.equipment(hammer);
+            character.powerDrink();
+            ((MaxHammer) character).attack(new Gunner());
+            ((MaxHammer) character).spin();
+            ((MaxHammer) character).block();
+        } else if (choice == 2) {
+            character = new Gunner();
+            Gun gun = new BasicGun();
+            System.out.println("\n== Gunner Actions ==");
+            character.levelUp();
+            character.shopping();
+            character.equipment(gun);
+            character.powerDrink();
+            ((ShockBom) character).shot(new Warrior());
+            ((ShockBom) character).changeBullet();
+            ((ShockBom) character).shockBom();
+        } else {
+            System.out.println("Invalid choice! Exiting...");
         }
+
+        scanner.close();
     }
 }
